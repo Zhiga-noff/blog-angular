@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import 'quill/dist/quill.core.css';
+@import 'quill/dist/quill.snow.css';
 
 :root {
   --primary-color: #dc3545;
@@ -79,7 +81,7 @@ img {
   }
 
   &-content {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -211,10 +213,11 @@ img {
 .form-control {
   display: block;
   color: #888;
-  margin-bottom: .8rem;
+  margin-bottom: 0.8rem;
 
   &.invalid {
     color: var(--primary-color);
+
     input {
       border-color: var(--primary-color);
     }
