@@ -14,7 +14,7 @@ export class LoginPageComponent implements OnInit {
   public submited = false;
 
   constructor(
-    private auth: AuthService,
+    protected auth: AuthService,
     private router: Router,
   ) {}
 
@@ -36,10 +36,15 @@ export class LoginPageComponent implements OnInit {
       password: this.form.value.password,
     };
 
-    this.auth.login(user).subscribe(() => {
-      this.form.reset();
-      this.router.navigate(['/admin', 'dashboard']);
-      this.submited = false;
-    });
+    this.auth.login(user).subscribe(
+      () => {
+        this.form.reset();
+        this.router.navigate(['/admin', 'dashboard']);
+        this.submited = false;
+      },
+      (error) => {
+        this.submited = false;
+      },
+    );
   }
 }

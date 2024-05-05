@@ -9,7 +9,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class AdminLayoutComponent {
   constructor(
-    private auth: AuthService,
+    protected auth: AuthService,
     private router: Router,
   ) {}
 
