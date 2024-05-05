@@ -21,4 +21,18 @@ export class PostService {
       }),
     );
   }
+
+  getAll() {
+    return this.http.get(`${environment.firebaseDataBaseURL}/posts.json`).pipe(
+      map((response: { [key: string]: any }) => {
+        return Object.keys(response).map((key) => {
+          return {
+            ...response[key],
+            id: key,
+            date: new Date(response[key].date),
+          };
+        });
+      }),
+    );
+  }
 }
