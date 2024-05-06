@@ -35,4 +35,8 @@ export class PostService {
       }),
     );
   }
+
+  remove(id) {
+    return this.http.delete<void>(`${environment.firebaseDataBaseURL}/posts/${id}.json`);
+  }
 }

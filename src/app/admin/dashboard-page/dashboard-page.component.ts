@@ -11,6 +11,8 @@ import { Subscription } from 'rxjs';
 export class DashboardPageComponent implements OnInit, OnDestroy {
   public posts: Post[] = [];
   public postSubscription: Subscription;
+  public deleteSubscription: Subscription;
+  public searchStr: string = '';
 
   constructor(private postService: PostService) {}
 
@@ -24,7 +26,17 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
     if (this.postSubscription) {
       this.postSubscription.unsubscribe();
     }
+
+    if (this.deleteSubscription) {
+      this.deleteSubscription.unsubscribe();
+    }
   }
 
-  remove(id: string) {}
+  remove(id: string) {
+    this.deleteSubscription = this.postService.remove(id).subscribe(() => {
+      this.posts = this.posts.filter((post) => {
+        return post.id !== id;
+      });
+    });
+  }
 }
