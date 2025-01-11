@@ -1,27 +1,32 @@
-# Blog
+# Dasha Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
+SPA Блог и админ панель блога, разработанное с
+использованием **Firebase**, **TypeScript** и **Angular 17**.
 
-## Development server
+## Старт проекта
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Требования
 
-## Code scaffolding
+Для корректной работы проекта на вашем компьютере должны быть установлены следующие инструменты:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [Node.js](https://nodejs.org/en/) (рекомендуемая версия: LTS)
+- [Angular](https://angular.dev)
+  ```npm install -g @angular/cli```
 
-## Build
+### Установка зависимостей
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm install
+```
 
-## Running unit tests
+### Запуск в режиме разработки
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+ng serve
+ ```
 
-## Running end-to-end tests
+### Продакшн сборка проекта
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+ng build
+ ```
